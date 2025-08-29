@@ -1,9 +1,8 @@
-export default function handler(req, res) {
-  res.status(200).json({
-    online: true,
-    players: [
-      { name: "Steve", uuid: "123" },
-      { name: "Alex", uuid: "456" }
-    ]
-  });
+{
+  "online": true,
+  "players": {
+    "online": 5,
+    "max": 20,
+    "list": ["Steve", "Alex", "Notch", "Herobrine", "Enderman"]
+  }
 }
