@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MiServidor Minecraft</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header>
+  <h1>MiServidor Minecraft</h1>
+  <div id="status">Cargando estado...</div>
+  <button id="playBtn">PLAY</button>
+</header>
+
+<!-- Popup para copiar IP -->
+<div id="popup" class="hidden">
+  <p>IP del servidor:</p>
+  <input type="text" id="serverIP" readonly value="smpcremaserver.duckdns.org">
+  <button id="copyBtn">Copiar</button>
+  <button id="closePopup">Cerrar</button>
+  <span id="copyMsg"></span>
+</div>
+
+<section id="players-section">
+  <h2>Jugadores Conectados</h2>
+  <div id="players"></div>
+</section>
+
+<section id="dynmap-section">
+  <h2>Mapa del Servidor</h2>
+  <iframe src="https://TU_DYNMAP_URL" width="100%" height="500"></iframe>
+</section>
+
+<section id="downloads-section">
+  <h2>Descargas</h2>
+  <a href="mods/modpack.zip" download>Descargar Modpack</a>
+  <a href="mods/client.zip" download>Descargar Cliente</a>
+</section>
+
+<footer>
+  <p>Síguenos en:</p>
+  <a href="#" target="_blank">Discord</a> |
+  <a href="#" target="_blank">Twitter</a> |
+  <a href="#" target="_blank">YouTube</a>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
