@@ -1,4 +1,4 @@
-const BACKEND_URL = "/api/status";
+const BACKEND_URL = "./api/status";
 
 // =======================
 // Función para obtener estado del servidor
