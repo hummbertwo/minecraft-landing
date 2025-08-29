@@ -4,48 +4,59 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>MiServidor Minecraft</title>
-<link rel="stylesheet" href="/styles.css">
+<link rel="stylesheet" href="styles.css">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
 <header>
   <h1>MiServidor Minecraft</h1>
   <div id="status">Cargando estado...</div>
-  <button id="playBtn">PLAY</button>
+  <button id="playBtn">Jugar</button>
 </header>
 
 <!-- Popup para copiar IP -->
 <div id="popup" class="hidden">
-  <p>IP del servidor:</p>
-  <input type="text" id="serverIP" readonly value="smpcremaserver.duckdns.org">
-  <button id="copyBtn">Copiar</button>
-  <button id="closePopup">Cerrar</button>
-  <span id="copyMsg"></span>
+  <div class="popup-content">
+    <h3>IP del Servidor</h3>
+    <input type="text" id="serverIP" readonly value="smpcremaserver.duckdns.org">
+    <div class="popup-buttons">
+      <button id="copyBtn">Copiar</button>
+      <button id="closePopup">Cerrar</button>
+    </div>
+    <span id="copyMsg"></span>
+  </div>
 </div>
 
-<section id="players-section">
-  <h2>Jugadores Conectados</h2>
-  <div id="players"></div>
-</section>
+<main>
+  <section id="players-section">
+    <h2>Jugadores Conectados</h2>
+    <div id="players" class="card"></div>
+  </section>
 
-<section id="dynmap-section">
-  <h2>Mapa del Servidor</h2>
-  <iframe src="http://smpcremaserver.duckdns.org:8500/" width="100%" height="500"></iframe>
-</section>
+  <section id="dynmap-section">
+    <h2>Mapa del Servidor</h2>
+    <iframe src="http://smpcremaserver.duckdns.org:8500/" frameborder="0"></iframe>
+  </section>
 
-<section id="downloads-section">
-  <h2>Descargas</h2>
-  <a href="mods/modpack.zip" download>Descargar Modpack</a>
-  <a href="mods/client.zip" download>Descargar Cliente</a>
-</section>
+  <section id="downloads-section">
+    <h2>Descargas</h2>
+    <div class="downloads">
+      <a href="mods/modpack.zip" download class="btn">Descargar Modpack</a>
+      <a href="mods/client.zip" download class="btn">Descargar Cliente</a>
+    </div>
+  </section>
+</main>
 
 <footer>
   <p>Síguenos en:</p>
-  <a href="#" target="_blank">Discord</a> |
-  <a href="#" target="_blank">Twitter</a> |
-  <a href="#" target="_blank">YouTube</a>
+  <div class="socials">
+    <a href="#" target="_blank">Discord</a>
+    <a href="#" target="_blank">Twitter</a>
+    <a href="#" target="_blank">YouTube</a>
+  </div>
 </footer>
 
-<script src="/script.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
