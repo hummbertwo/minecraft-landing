@@ -1,8 +1,0 @@
-{
-  "name": "minecraft-landing",
-  "version": "1.0.0",
-  "type": "module",
-  "dependencies": {
-    "minecraft-server-util": "^5.4.4"
-  }
-}
