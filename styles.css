@@ -75,6 +75,70 @@ nav a:hover {
   color: #eee;
 }
 
+/* ======= Players Grid ======= */
+#players {
+  padding: 3rem 2rem;
+  text-align: center;
+}
+
+#players h2 {
+  color: #00ff88;
+  margin-bottom: 2rem;
+}
+
+.players-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1.5rem;
+}
+
+.player-card {
+  background: #1a1a1a;
+  border: 2px solid #00ff88;
+  border-radius: 12px;
+  padding: 1rem;
+  text-align: center;
+  transition: transform 0.3s ease-in-out;
+  box-shadow: 0 0 15px rgba(0,255,136,0.2);
+}
+
+.player-card:hover {
+  transform: scale(1.05);
+}
+
+.player-card img {
+  width: 80px;
+  height: 80px;
+  border-radius: 8px;
+  margin-bottom: 0.5rem;
+}
+
+.player-card p {
+  margin: 0;
+  font-weight: bold;
+  color: #fff;
+}
+
+/* ======= Dynmap ======= */
+#mapa {
+  padding: 3rem 2rem;
+  text-align: center;
+}
+
+#mapa h2 {
+  color: #00ff88;
+  margin-bottom: 1rem;
+}
+
+.map-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  border: 2px solid #00ff88;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0, 255, 136, 0.3);
+}
+
 /* ======= Buttons ======= */
 .btn {
   display: inline-block;

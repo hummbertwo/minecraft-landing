@@ -10,8 +10,9 @@
   <!-- Navbar -->
   <nav>
     <a href="#">Inicio</a>
-    <a href="#">Servidor</a>
-    <a href="#">Tienda</a>
+    <a href="#status">Servidor</a>
+    <a href="#players">Jugadores</a>
+    <a href="#mapa">Mapa</a>
     <a href="#">Contacto</a>
   </nav>
 
@@ -27,6 +28,23 @@
     <h2>Estado del Servidor</h2>
     <p id="server-status">Cargando...</p>
     <p id="server-players"></p>
+  </section>
+
+  <!-- Players Online -->
+  <section id="players">
+    <h2>👥 Jugadores Conectados</h2>
+    <div id="player-list" class="players-grid">
+      <p>Cargando jugadores...</p>
+    </div>
+  </section>
+
+  <!-- Dynmap -->
+  <section id="mapa">
+    <h2>🗺️ Mapa en Vivo</h2>
+    <div class="map-container">
+      <!-- ⚠️ Aquí debes cambiar la URL por la de tu Dynmap -->
+      <iframe src="http://TU-IP-DEL-SERVIDOR:8123/" width="100%" height="500" frameborder="0"></iframe>
+    </div>
   </section>
 
   <!-- Footer -->
