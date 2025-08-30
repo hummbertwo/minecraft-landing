@@ -1,189 +1,156 @@
-body {
-  font-family: Arial, sans-serif;
+/* Reset */
+* {
   margin: 0;
   padding: 0;
-  background: #111;
-  color: #eee;
-  text-align: center;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Inter', sans-serif;
+  background: #f9f9f9;
+  color: #222;
+  line-height: 1.6;
 }
 
-header {
-  background: #222;
-  padding: 20px;
-}
-
-header h1 {
-  margin: 0;
-  font-size: 2rem;
-}
-
-header button {
-  margin-top: 10px;
-  padding: 10px 20px;
-  background: #4CAF50;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  color: white;
-  font-size: 1rem;
-}
-
-.server-status {
-  padding: 20px;
-}
-
-#status {
-  font-size: 1.2rem;
-  margin: 10px 0;
-}
-
-#players {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 15px;
-  margin-top: 15px;
-}
-
-.player-card {
-  background: #1e1e1e;
-  border-radius: 10px;
-  padding: 10px;
-  width: 120px;
-  text-align: center;
-  box-shadow: 0px 0px 10px #000;
-}
-
-.player-card img {
-  border-radius: 50%;
-  margin-bottom: 8px;
-}
-
-.player-name {
-  font-size: 0.9rem;
-  color: #ccc;
-}
-
-/* ==========================
-   Dynmap / Map Section
-   ========================== */
-.map-section {
-  padding: 50px 20px;
-  text-align: center;
-  background: rgba(0, 0, 0, 0.7);
-  margin-top: 40px;
-  border-radius: 15px;
-}
-
-.map-section h2 {
-  font-size: 2rem;
-  margin-bottom: 20px;
-  color: #4cafef;
-  text-shadow: 2px 2px 5px rgba(0,0,0,0.7);
-}
-
-.map-frame {
-  width: 100%;
-  height: 600px;
+/* Container */
+.container {
+  width: 90%;
   max-width: 1200px;
   margin: auto;
-  display: block;
-  border: 3px solid #4cafef;
-  border-radius: 10px;
-  box-shadow: 0 0 20px rgba(0,0,0,0.5);
 }
 
-.btn-open-map {
-  margin-top: 20px;
-  padding: 10px 20px;
-  font-size: 1rem;
-  background: #4cafef;
-  color: white;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: 0.3s;
+/* Navbar */
+.navbar {
+  background: #fff;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  padding: 1rem 0;
 }
-
-.btn-open-map:hover {
-  background: #358fdb;
-  transform: scale(1.05);
-}
-
-
-
-.shop {
-  padding: 20px;
-  background: #222;
-}
-
-.shop h2 {
-  margin-bottom: 15px;
-}
-
-.items {
+.navbar .container {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
-}
-
-.item-card {
-  background: #1e1e1e;
-  border-radius: 12px;
-  padding: 15px;
-  width: 150px;
-  box-shadow: 0 0 10px #000;
-}
-
-.item-card img {
-  width: 64px;
-  height: 64px;
-}
-
-.item-card h3 {
-  margin: 10px 0 5px;
-}
-
-.item-card button {
-  background: #4CAF50;
-  border: none;
-  border-radius: 6px;
-  padding: 8px 12px;
-  color: white;
-  cursor: pointer;
-  font-size: 0.9rem;
-}
-
-.popup {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.7);
-  display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
 }
-
-.popup.hidden {
-  display: none;
+.logo {
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: #2a2a2a;
+}
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+.nav-links a {
+  text-decoration: none;
+  color: #444;
+  font-weight: 500;
+}
+.nav-links a:hover {
+  color: #008CFF;
 }
 
-.popup-content {
-  background: #222;
-  padding: 20px;
-  border-radius: 10px;
-  text-align: center;
+/* Hero */
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 4rem 0;
+}
+.hero-content {
+  flex: 1;
+}
+.hero-content h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+.hero-content h2 span {
+  color: #008CFF;
+}
+.hero-content p {
+  margin-bottom: 1.5rem;
+}
+.btn-primary {
+  background: #008CFF;
   color: white;
-  width: 300px;
+  padding: 0.8rem 1.5rem;
+  border-radius: 8px;
+  text-decoration: none;
+}
+.hero-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+.hero-image img {
+  max-width: 400px;
 }
 
-.close {
-  position: absolute;
-  top: 15px;
-  right: 25px;
-  font-size: 2rem;
-  cursor: pointer;
+/* Server status */
+.server-status {
+  background: #008CFF;
+  color: white;
+  text-align: center;
+  padding: 2rem 1rem;
+}
+.server-status h2 {
+  margin-bottom: 0.5rem;
+}
+
+/* Players */
+.players {
+  padding: 3rem 0;
+  background: #fff;
+}
+.players-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+.player-card {
+  background: #f0f0f0;
+  padding: 1rem;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+}
+.player-card img {
+  width: 64px;
+  height: 64px;
+  margin-bottom: 0.5rem;
+}
+
+/* Rewards */
+.rewards {
+  padding: 3rem 0;
+}
+.rewards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+.reward-card {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 1.5rem;
+  text-align: center;
+  transition: transform 0.2s;
+}
+.reward-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+.reward-card img {
+  width: 80px;
+  margin-bottom: 1rem;
+}
+
+/* Footer */
+.footer {
+  background: #111;
+  color: #aaa;
+  text-align: center;
+  padding: 1.5rem 0;
+  margin-top: 3rem;
 }

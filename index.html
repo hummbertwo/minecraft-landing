@@ -7,62 +7,77 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header>
-    <h1>🌍 Servidor Minecraft</h1>
-    <button id="playBtn">▶️ Jugar Ahora</button>
+  <!-- HEADER -->
+  <header class="navbar">
+    <div class="container">
+      <h1 class="logo">🌍 SMP Crema</h1>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="#inicio">Inicio</a></li>
+          <li><a href="#jugadores">Jugadores</a></li>
+          <li><a href="#cangeos">Canjeos</a></li>
+        </ul>
+      </nav>
+    </div>
   </header>
 
-  <!-- Estado del servidor -->
+  <!-- HERO -->
+  <section class="hero" id="inicio">
+    <div class="hero-content">
+      <h2>Bienvenido a <span>SMP Crema</span></h2>
+      <p>Conéctate con tus amigos y vive la mejor experiencia Minecraft.</p>
+      <a href="#jugadores" class="btn-primary">Ver Jugadores</a>
+    </div>
+    <div class="hero-image">
+      <img src="assets/hero-img.png" alt="Minecraft World">
+    </div>
+  </section>
+
+  <!-- ESTADO DEL SERVIDOR -->
   <section class="server-status">
-    <h2>Estado del Servidor</h2>
-    <div id="status">Cargando...</div>
-    <div id="players"></div>
+    <div class="container">
+      <h2>Estado del servidor</h2>
+      <p id="server-status-text">Cargando...</p>
+      <p><strong>IP:</strong> smpcremaserver.duckdns.org</p>
+    </div>
   </section>
 
-  <!-- Mapa Dynmap -->
-<section class="map-section">
-  <h2>Mapa en tiempo real</h2>
-  <iframe class="map-frame" src="http://smpcremaserver.duckdns.org:8500/" title="Dynmap"></iframe>
-  <a href="http://smpcremaserver.duckdns.org:8500/" target="_blank">
-    <button class="btn-open-map">Abrir en grande</button>
-  </a>
-</section>
-
-  <!-- Catálogo de ítems -->
-  <section class="shop">
-    <h2>Catálogo de Ítems</h2>
-    <div class="items">
-      <div class="item-card">
-        <img src="https://minecraft.wiki/images/Iron_Sword.png" alt="Espada de Hierro">
-        <h3>Espada de Hierro</h3>
-        <p>200 puntos</p>
-        <button>Canjear</button>
-      </div>
-      <div class="item-card">
-        <img src="https://minecraft.wiki/images/Diamond_Chestplate.png" alt="Armadura de Diamante">
-        <h3>Armadura de Diamante</h3>
-        <p>500 puntos</p>
-        <button>Canjear</button>
-      </div>
-      <div class="item-card">
-        <img src="https://minecraft.wiki/images/Golden_Apple.png" alt="Manzana Dorada">
-        <h3>Manzana Dorada</h3>
-        <p>100 puntos</p>
-        <button>Canjear</button>
+  <!-- JUGADORES ONLINE -->
+  <section class="players" id="jugadores">
+    <div class="container">
+      <h2>Jugadores en línea</h2>
+      <div id="players-list" class="players-grid">
+        <!-- Aquí script.js inyecta jugadores -->
       </div>
     </div>
   </section>
 
-  <!-- Popup para copiar IP -->
-  <div id="popup" class="popup hidden">
-    <div class="popup-content">
-      <span id="closePopup" class="close">&times;</span>
-      <h2>Conéctate al servidor</h2>
-      <input type="text" id="serverIP" value="smpcremaserver.duckdns.org" readonly>
-      <button id="copyBtn">📋 Copiar IP</button>
-      <p id="copyMsg"></p>
+  <!-- CANJEOS -->
+  <section class="rewards" id="cangeos">
+    <div class="container">
+      <h2>Canjea tus puntos</h2>
+      <p>Obtén recompensas exclusivas en el servidor.</p>
+      <div class="rewards-grid">
+        <div class="reward-card">
+          <img src="assets/armor.png" alt="Armadura">
+          <h3>Armadura Épica</h3>
+          <p>Canjea por 100 puntos</p>
+        </div>
+        <div class="reward-card">
+          <img src="assets/tool.png" alt="Herramienta">
+          <h3>Herramienta Pro</h3>
+          <p>Canjea por 75 puntos</p>
+        </div>
+      </div>
     </div>
-  </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <p>© 2025 SMP Crema - Servidor Minecraft</p>
+    </div>
+  </footer>
 
   <script src="script.js"></script>
 </body>
