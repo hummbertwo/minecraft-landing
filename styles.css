@@ -64,10 +64,10 @@ header button {
   color: #ccc;
 }
 
-/* =======================
-   Dynmap Section
-   ======================= */
-.dynmap-section {
+/* ==========================
+   Dynmap / Map Section
+   ========================== */
+.map-section {
   padding: 50px 20px;
   text-align: center;
   background: rgba(0, 0, 0, 0.7);
@@ -75,29 +75,41 @@ header button {
   border-radius: 15px;
 }
 
-.dynmap-section h2 {
+.map-section h2 {
   font-size: 2rem;
   margin-bottom: 20px;
   color: #4cafef;
   text-shadow: 2px 2px 5px rgba(0,0,0,0.7);
 }
 
-.dynmap-container {
+.map-frame {
   width: 100%;
   height: 600px;
   max-width: 1200px;
   margin: auto;
+  display: block;
   border: 3px solid #4cafef;
   border-radius: 10px;
-  overflow: hidden;
   box-shadow: 0 0 20px rgba(0,0,0,0.5);
 }
 
-.dynmap-container iframe {
-  width: 100%;
-  height: 100%;
+.btn-open-map {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  background: #4cafef;
+  color: white;
   border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
 }
+
+.btn-open-map:hover {
+  background: #358fdb;
+  transform: scale(1.05);
+}
+
 
 
 .shop {
