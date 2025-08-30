@@ -3,68 +3,67 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Minecraft Server</title>
+  <title>Minecraft Landing</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<main>
-  <!-- Sección de estado del servidor -->
-  <section id="server-section">
+  <header>
+    <h1>🌍 Servidor Minecraft</h1>
+    <button id="playBtn">▶️ Jugar Ahora</button>
+  </header>
+
+  <!-- Estado del servidor -->
+  <section class="server-status">
     <h2>Estado del Servidor</h2>
     <div id="status">Cargando...</div>
-    <div id="players" class="players-container">
-      <p>No hay jugadores conectados</p>
-    </div>
-    <button id="playBtn">Jugar Ahora</button>
+    <div id="players"></div>
   </section>
 
-  <!-- Popup de conexión -->
-  <div id="popup" class="popup hidden">
-    <div class="popup-content">
-      <span id="closePopup" class="close">&times;</span>
-      <h3>Conéctate al servidor</h3>
-      <input type="text" id="serverIP" value="tuservidor.duckdns.org" readonly />
-      <button id="copyBtn">Copiar IP</button>
-      <p id="copyMsg"></p>
-    </div>
-  </div>
-
-  <!-- Sección Dynmap -->
-  <section id="map-section">
+  <!-- Mapa Dynmap -->
+  <section class="dynmap">
     <h2>Mapa del Mundo</h2>
     <iframe 
-      src="http://smpcremaserver.duckdns.org:8500/" 
-      width="100%" height="500" frameborder="0">
+      src="http://smpcremaserver.duckdns.org:8123/" 
+      frameborder="0" 
+      allowfullscreen>
     </iframe>
   </section>
 
-  <!-- Sección de puntos y canjes -->
-  <section id="points-section">
-    <h2>Puntos Acumulados</h2>
-    <div id="points-display">Puntos: 0</div>
-    <button id="addPointsBtn">Ganar Puntos</button>
-  </section>
-
-  <section id="items-section">
+  <!-- Catálogo de ítems -->
+  <section class="shop">
     <h2>Catálogo de Ítems</h2>
-    <div class="item" data-cost="10">
-      <p>Espada de Diamante - 10 puntos</p>
-      <button class="redeem-btn">Canjear</button>
-    </div>
-    <div class="item" data-cost="15">
-      <p>Armadura de Hierro - 15 puntos</p>
-      <button class="redeem-btn">Canjear</button>
+    <div class="items">
+      <div class="item-card">
+        <img src="https://minecraft.wiki/images/Iron_Sword.png" alt="Espada de Hierro">
+        <h3>Espada de Hierro</h3>
+        <p>200 puntos</p>
+        <button>Canjear</button>
+      </div>
+      <div class="item-card">
+        <img src="https://minecraft.wiki/images/Diamond_Chestplate.png" alt="Armadura de Diamante">
+        <h3>Armadura de Diamante</h3>
+        <p>500 puntos</p>
+        <button>Canjear</button>
+      </div>
+      <div class="item-card">
+        <img src="https://minecraft.wiki/images/Golden_Apple.png" alt="Manzana Dorada">
+        <h3>Manzana Dorada</h3>
+        <p>100 puntos</p>
+        <button>Canjear</button>
+      </div>
     </div>
   </section>
-</main>
 
-  </section>
-
-  <!-- Footer -->
-  <footer>
-    <p>© 2025 Minecraft Server - Creado con ❤️</p>
-    <p><a href="#">Discord</a> | <a href="#">Tienda</a></p>
-  </footer>
+  <!-- Popup para copiar IP -->
+  <div id="popup" class="popup hidden">
+    <div class="popup-content">
+      <span id="closePopup" class="close">&times;</span>
+      <h2>Conéctate al servidor</h2>
+      <input type="text" id="serverIP" value="smpcremaserver.duckdns.org" readonly>
+      <button id="copyBtn">📋 Copiar IP</button>
+      <p id="copyMsg"></p>
+    </div>
+  </div>
 
   <script src="script.js"></script>
 </body>
