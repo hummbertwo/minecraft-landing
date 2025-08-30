@@ -1,3 +1,81 @@
+/* ======= General ======= */
+body {
+  background-color: #0d0d0d;
+  color: #fff;
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* ======= Navbar ======= */
+nav {
+  background: #0d0d0d;
+  border-bottom: 2px solid #00ff88;
+  padding: 1rem 2rem;
+  text-align: center;
+}
+
+nav a {
+  color: #fff;
+  font-weight: 500;
+  margin: 0 1rem;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: #00ff88;
+}
+
+/* ======= Hero Section ======= */
+.hero {
+  background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.85)),
+              url('https://i.imgur.com/B6R8e2M.png') center/cover no-repeat;
+  text-align: center;
+  padding: 6rem 2rem;
+  border-bottom: 3px solid #00ff88;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  color: #00ff88;
+  text-shadow: 0 0 15px #00ff88;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  color: #bbb;
+  margin-top: 1rem;
+}
+
+/* ======= Server Status Card ======= */
+.status-card {
+  background: #1a1a1a;
+  border: 2px solid #00ff88;
+  border-radius: 12px;
+  padding: 2rem;
+  margin: 3rem auto;
+  max-width: 600px;
+  text-align: center;
+  box-shadow: 0 0 20px rgba(0, 255, 136, 0.3);
+  transition: transform 0.3s ease-in-out;
+}
+
+.status-card:hover {
+  transform: scale(1.05);
+}
+
+.status-card h2 {
+  color: #00ff88;
+  margin-bottom: 1rem;
+}
+
+.status-card p {
+  font-size: 1.2rem;
+  color: #eee;
+}
+
+/* ======= Players Grid ======= */
 .players-container {
   display: flex;
   flex-wrap: wrap;
@@ -24,4 +102,56 @@
 .player-name {
   font-size: 14px;
   color: #fff;
+}
+
+
+/* ======= Dynmap ======= */
+#mapa {
+  padding: 3rem 2rem;
+  text-align: center;
+}
+
+#mapa h2 {
+  color: #00ff88;
+  margin-bottom: 1rem;
+}
+
+.map-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  border: 2px solid #00ff88;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0, 255, 136, 0.3);
+}
+
+/* ======= Buttons ======= */
+.btn {
+  display: inline-block;
+  background: #00ff88;
+  color: #0d0d0d;
+  font-weight: bold;
+  padding: 0.8rem 1.5rem;
+  border-radius: 8px;
+  margin-top: 1rem;
+  transition: background 0.3s;
+  text-decoration: none;
+}
+
+.btn:hover {
+  background: #00cc6a;
+}
+
+/* ======= Footer ======= */
+footer {
+  background: #0d0d0d;
+  border-top: 2px solid #00ff88;
+  padding: 2rem;
+  text-align: center;
+  color: #bbb;
+}
+
+footer a {
+  color: #00ff88;
+  text-decoration: none;
 }
