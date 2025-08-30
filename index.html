@@ -1,83 +1,61 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Minecraft Landing</title>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <!-- HEADER -->
-  <header class="navbar">
+  <!-- Hero -->
+  <header class="hero">
     <div class="container">
-      <h1 class="logo">🌍 SMP Crema</h1>
-      <nav>
-        <ul class="nav-links">
-          <li><a href="#inicio">Inicio</a></li>
-          <li><a href="#jugadores">Jugadores</a></li>
-          <li><a href="#cangeos">Canjeos</a></li>
-        </ul>
-      </nav>
+      <h1 class="title">Bienvenido al Servidor SMP</h1>
+      <p class="subtitle">Conéctate y juega con tu comunidad</p>
+      <button id="playBtn" class="btn-primary">Jugar Ahora</button>
     </div>
   </header>
 
-  <!-- HERO -->
-  <section class="hero" id="inicio">
-    <div class="hero-content">
-      <h2>Bienvenido a <span>SMP Crema</span></h2>
-      <p>Conéctate con tus amigos y vive la mejor experiencia Minecraft.</p>
-      <a href="#jugadores" class="btn-primary">Ver Jugadores</a>
-    </div>
-    <div class="hero-image">
-      <img src="assets/hero-img.png" alt="Minecraft World">
-    </div>
-  </section>
-
-  <!-- ESTADO DEL SERVIDOR -->
+  <!-- Estado del servidor -->
   <section class="server-status">
     <div class="container">
-      <h2>Estado del servidor</h2>
-      <p id="server-status-text">Cargando...</p>
-      <p><strong>IP:</strong> smpcremaserver.duckdns.org</p>
-    </div>
-  </section>
-
-  <!-- JUGADORES ONLINE -->
-  <section class="players" id="jugadores">
-    <div class="container">
-      <h2>Jugadores en línea</h2>
-      <div id="players-list" class="players-grid">
-        <!-- Aquí script.js inyecta jugadores -->
+      <h2>Estado del Servidor</h2>
+      <p id="status">⏳ Cargando...</p>
+      <div id="players" class="players-list">
+        <p>Cargando jugadores...</p>
       </div>
     </div>
   </section>
 
-  <!-- CANJEOS -->
-  <section class="rewards" id="cangeos">
+  <!-- Canjeos / Tienda -->
+  <section class="rewards">
     <div class="container">
       <h2>Canjea tus puntos</h2>
-      <p>Obtén recompensas exclusivas en el servidor.</p>
-      <div class="rewards-grid">
+      <div class="reward-grid">
         <div class="reward-card">
-          <img src="assets/armor.png" alt="Armadura">
-          <h3>Armadura Épica</h3>
-          <p>Canjea por 100 puntos</p>
+          <img src="img/armor.png" alt="Armadura" />
+          <h3>Armadura</h3>
+          <p>Protección completa</p>
         </div>
         <div class="reward-card">
-          <img src="assets/tool.png" alt="Herramienta">
-          <h3>Herramienta Pro</h3>
-          <p>Canjea por 75 puntos</p>
+          <img src="img/sword.png" alt="Espada" />
+          <h3>Espada</h3>
+          <p>Más daño en combate</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- FOOTER -->
-  <footer class="footer">
-    <div class="container">
-      <p>© 2025 SMP Crema - Servidor Minecraft</p>
+  <!-- Popup -->
+  <div id="popup" class="popup hidden">
+    <div class="popup-content">
+      <span id="closePopup" class="close">&times;</span>
+      <h2>Conéctate al Servidor</h2>
+      <input id="serverIP" type="text" value="smpcremaserver.duckdns.org" readonly />
+      <button id="copyBtn" class="btn-primary">Copiar IP</button>
+      <p id="copyMsg"></p>
     </div>
-  </footer>
+  </div>
 
   <script src="script.js"></script>
 </body>
