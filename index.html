@@ -1,58 +1,50 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Minecraft Server</title>
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-  <!-- Navbar -->
-  <nav>
-    <a href="#">Inicio</a>
-    <a href="#status">Servidor</a>
-    <a href="#players">Jugadores</a>
-    <a href="#mapa">Mapa</a>
-    <a href="#">Contacto</a>
-  </nav>
-
-  <!-- Hero Section -->
-  <section class="hero">
-    <h1>🌌 Minecraft Server</h1>
-    <p>Conéctate y vive la experiencia definitiva en nuestro servidor</p>
-    <a href="#status" class="btn">Ver Estado del Servidor</a>
-  </section>
-
-  <!-- Server Status -->
-  <section id="status" class="status-card">
+<main>
+  <!-- Sección de estado del servidor -->
+  <section id="server-section">
     <h2>Estado del Servidor</h2>
-    <p id="server-status">Cargando...</p>
-    <p id="server-players"></p>
+    <div id="status">Cargando...</div>
+    <div id="players" class="players-container">
+      <p>No hay jugadores conectados</p>
+    </div>
+    <button id="playBtn">Jugar Ahora</button>
   </section>
 
-  <!-- Players Online -->
-  <section id="players">
-    <h2>👥 Jugadores Conectados</h2>
-    <div id="player-list" class="players-grid">
-      <p>Cargando jugadores...</p>
+  <!-- Popup de conexión -->
+  <div id="popup" class="popup hidden">
+    <div class="popup-content">
+      <span id="closePopup" class="close">&times;</span>
+      <h3>Conéctate al servidor</h3>
+      <input type="text" id="serverIP" value="tuservidor.duckdns.org" readonly />
+      <button id="copyBtn">Copiar IP</button>
+      <p id="copyMsg"></p>
+    </div>
+  </div>
+
+  <!-- Sección Dynmap -->
+  <section id="map-section">
+    <h2>Mapa del Mundo</h2>
+    <iframe 
+      src="http://smpcremaserver.duckdns.org:8500/" 
+      width="100%" height="500" frameborder="0">
+    </iframe>
+  </section>
+
+  <!-- Sección de puntos y canjes -->
+  <section id="points-section">
+    <h2>Puntos Acumulados</h2>
+    <div id="points-display">Puntos: 0</div>
+    <button id="addPointsBtn">Ganar Puntos</button>
+  </section>
+
+  <section id="items-section">
+    <h2>Catálogo de Ítems</h2>
+    <div class="item" data-cost="10">
+      <p>Espada de Diamante - 10 puntos</p>
+      <button class="redeem-btn">Canjear</button>
+    </div>
+    <div class="item" data-cost="15">
+      <p>Armadura de Hierro - 15 puntos</p>
+      <button class="redeem-btn">Canjear</button>
     </div>
   </section>
-
-  <!-- Dynmap -->
-  <section id="mapa">
-    <h2>🗺️ Mapa en Vivo</h2>
-    <div class="map-container">
-      <!-- ⚠️ Aquí debes cambiar la URL por la de tu Dynmap -->
-      <iframe src="http://TU-IP-DEL-SERVIDOR:8123/" width="100%" height="500" frameborder="0"></iframe>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer>
-    <p>© 2025 Minecraft Server - Creado con ❤️</p>
-    <p><a href="#">Discord</a> | <a href="#">Tienda</a></p>
-  </footer>
-
-  <script src="script.js"></script>
-</body>
-</html>
+</main>
