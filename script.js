@@ -1,64 +1,18 @@
-const BACKEND_URL = "/api/status";
-function updateServerStatus(data) {
-  const statusDiv = document.getElementById("status");
-  const playersDiv = document.getElementById("players");
-  playersDiv.innerHTML = "";
-  if (!data.online) {
-    statusDiv.textContent = "❌ Servidor Offline";
-    statusDiv.style.color = "red";
-    playersDiv.innerHTML = "<p>No hay jugadores conectados</p>";
-    return;
-  }
-  statusDiv.textContent = `✅ Online - ${data.players.online}/${data.players.max}`;
-  statusDiv.style.color = "lightgreen";
-  if (data.players.list && data.players.list.length > 0) {
-    data.players.list.forEach(player => {
-      const card = document.createElement("div");
-      card.className = "player-card";
-      const avatar = document.createElement("img");
-      avatar.src = `https://minotar.net/avatar/${player}/72`;
-      avatar.alt = player;
-      const name = document.createElement("div");
-      name.className = "player-name";
-      name.textContent = player;
-      card.appendChild(avatar);
-      card.appendChild(name);
-      playersDiv.appendChild(card);
-    });
-  } else {
-    playersDiv.innerHTML = "<p>No hay jugadores conectados</p>";
-  }
-}
 async function fetchServerStatus() {
   try {
-    const res = await fetch(BACKEND_URL);
-    const data = await res.json();
-    updateServerStatus(data);
-  } catch (err) {
-    console.error(err);
-    const statusDiv = document.getElementById("status");
-    const playersDiv = document.getElementById("players");
-    statusDiv.textContent = "⚠️ Error al consultar el servidor";
-    statusDiv.style.color = "orange";
-    playersDiv.innerHTML = "<p>No se pudo cargar la lista de jugadores</p>";
+    const response = await fetch("/api/status");
+    const data = await response.json();
+
+    document.getElementById("server-status").textContent =
+      data.online ? "🟢 Servidor en línea" : "🔴 Servidor desconectado";
+
+    document.getElementById("server-players").textContent =
+      `Jugadores conectados: ${data.players.online} / ${data.players.max}`;
+  } catch (error) {
+    document.getElementById("server-status").textContent =
+      "❌ Error al conectar con el servidor";
+    document.getElementById("server-players").textContent = "";
   }
 }
+
 fetchServerStatus();
-setInterval(fetchServerStatus, 30000);
-const playBtn = document.getElementById("playBtn");
-const popup = document.getElementById("popup");
-const closePopup = document.getElementById("closePopup");
-const copyBtn = document.getElementById("copyBtn");
-const copyMsg = document.getElementById("copyMsg");
-const serverIP = document.getElementById("serverIP");
-playBtn.addEventListener("click", () => popup.classList.remove("hidden"));
-closePopup.addEventListener("click", () => popup.classList.add("hidden"));
-copyBtn.addEventListener("click", () => {
-  navigator.clipboard.writeText(serverIP.value).then(() => {
-    copyMsg.textContent = "✅ IP copiada";
-    setTimeout(() => copyMsg.textContent = "", 2000);
-  }).catch(() => {
-    copyMsg.textContent = "⚠️ Error al copiar";
-    setTimeout(() => copyMsg.textContent = "", 2000);
-  });
-});
