@@ -18,7 +18,7 @@ body {
   background-position: center;    /* Centra la imagen */
   text-align: center;
   padding: 5rem 2rem;
-  min-height: 70vh;              /* Opcional: que ocupe toda la altura */
+  min-height: 50vh;              /* Opcional: que ocupe toda la altura */
 }
 
 .title {
