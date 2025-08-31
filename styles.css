@@ -78,6 +78,57 @@ body {
   font-size: 0.9rem;
 }
 
+.server-info, .ranking {
+  width: 80%;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.server-info h2, .ranking h2 {
+  text-align: center;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.server-info ul {
+  list-style: none;
+  padding: 0;
+}
+
+.server-info li {
+  margin: 0.5rem 0;
+  font-size: 15px;
+}
+
+.ranking ol {
+  list-style: none;
+  padding: 0;
+  counter-reset: rank;
+}
+
+.ranking li {
+  background: #f9f9f9;
+  margin: 0.5rem 0;
+  padding: 0.7rem 1rem;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: bold;
+  position: relative;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.ranking li::before {
+  counter-increment: rank;
+  content: "#" counter(rank);
+  font-weight: bold;
+  margin-right: 1rem;
+  color: #4CAF50;
+}
 
 
 
