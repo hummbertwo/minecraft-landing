@@ -74,30 +74,8 @@ body {
   font-size: 0.9rem;
 }
 
-.rewards {
-  background: #111;
-  padding: 3rem 2rem;
-  text-align: center;
-}
 
-.reward-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 1.5rem;
-  margin-top: 2rem;
-}
 
-.reward-card {
-  background: #1e1e1e;
-  padding: 1.5rem;
-  border-radius: 12px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.5);
-}
-
-.reward-card img {
-  width: 64px;
-  margin-bottom: 1rem;
-}
 
 .popup {
   position: fixed;
