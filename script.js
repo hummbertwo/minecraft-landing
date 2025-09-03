@@ -88,30 +88,31 @@ copyBtn.addEventListener("click", () => {
 // Fetch Playtime Ranking
 // =======================
 async function fetchPlaytimeRanking() {
-      try {
-        const res = await fetch("smpcremaserver.duckdns.org:3000/api/playtime"); // tu backend
-        if (!res.ok) throw new Error("Error en la respuesta del servidor");
+  try {
+    const res = await fetch("http://smpcremaserver.duckdns.org:3000/api/playtime"); // ajusta tu IP
+    if (!res.ok) throw new Error("Error en la respuesta del servidor");
 
-        const data = await res.json();
-        const rankingDiv = document.getElementById("ranking");
-        rankingDiv.innerHTML = "";
+    const data = await res.json();
 
-        data.forEach((player, i) => {
-          const card = document.createElement("div");
-          card.className = "player-card";
-          card.innerHTML = `
-            <h3>#${i + 1}</h3>
-            <img src="https://minotar.net/avatar/${player.uuid}/72" alt="${player.name}" />
-            <p>${player.name}</p>
-            <p>⏱ ${player.playtime}</p>
-          `;
-          rankingDiv.appendChild(card);
-        });
-      } catch (err) {
-        console.error(err);
-        document.getElementById("ranking").innerHTML = "<p>⚠️ No se pudo cargar el ranking</p>";
-      }
-    }
+    const rankingDiv = document.getElementById("ranking");
+    rankingDiv.innerHTML = "";
 
-    fetchPlaytimeRanking();
-    setInterval(fetchPlaytimeRanking, 60000); // refresca cada 1 min
+    data.forEach((player, i) => {
+      const card = document.createElement("div");
+      card.className = "player-card";
+      card.innerHTML = `
+        <h3>#${i + 1}</h3>
+        <img src="https://minotar.net/avatar/${player.uuid}/72" alt="${player.name}" />
+        <p>${player.name}</p>
+        <p>⏱ ${player.playtime}</p>
+      `;
+      rankingDiv.appendChild(card);
+    });
+  } catch (err) {
+    console.error(err);
+    document.getElementById("ranking").innerHTML = "<p>⚠️ No se pudo cargar el ranking</p>";
+  }
+}
+
+fetchPlaytimeRanking();
+setInterval(fetchPlaytimeRanking, 60000);
