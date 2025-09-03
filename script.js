@@ -87,9 +87,15 @@ copyBtn.addEventListener("click", () => {
 // =======================
 // Fetch Playtime Ranking
 // =======================
+// Cambia esta URL por la que ngrok te dio (https://xxxx.ngrok.app)
+const BACKEND_PLAYTIME_URL = "https://10dc2cc2f03b.ngrok.app/api/playtime";
+
+// =======================
+// Fetch Playtime Ranking
+// =======================
 async function fetchPlaytimeRanking() {
   try {
-    const res = await fetch("https://10dc2cc2f03b.ngrok.app/api/playtime");
+    const res = await fetch(BACKEND_PLAYTIME_URL);
     if (!res.ok) throw new Error("Error en la respuesta del servidor");
 
     const data = await res.json();
@@ -115,4 +121,7 @@ async function fetchPlaytimeRanking() {
 }
 
 fetchPlaytimeRanking();
-setInterval(fetchPlaytimeRanking, 60000);
+setInterval(fetchPlaytimeRanking, 60000); // refresca cada minuto
+
+
+
