@@ -88,11 +88,16 @@ copyBtn.addEventListener("click", () => {
 // Fetch Playtime Ranking
 // =======================
 async function fetchPlaytimeRanking() {
+  console.log("Intentando fetch al ranking...");
+
   try {
-    const res = await fetch("http://smpcremaserver.duckdns.org:3000/api/playtime"); // ajusta tu IP
+    const res = await fetch("http://smpcremaserver.duckdns.org:3000/api/playtime");
+    console.log("Respuesta:", res);
+
     if (!res.ok) throw new Error("Error en la respuesta del servidor");
 
     const data = await res.json();
+    console.log("Datos obtenidos:", data);
 
     const rankingDiv = document.getElementById("ranking");
     rankingDiv.innerHTML = "";
@@ -109,7 +114,7 @@ async function fetchPlaytimeRanking() {
       rankingDiv.appendChild(card);
     });
   } catch (err) {
-    console.error(err);
+    console.error("Error al cargar ranking:", err);
     document.getElementById("ranking").innerHTML = "<p>⚠️ No se pudo cargar el ranking</p>";
   }
 }
