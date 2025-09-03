@@ -88,16 +88,11 @@ copyBtn.addEventListener("click", () => {
 // Fetch Playtime Ranking
 // =======================
 async function fetchPlaytimeRanking() {
-  console.log("Intentando fetch al ranking...");
-
   try {
-    const res = await fetch("https://10dc2cc2f03b.ngrok-free.app/api/playtime");
-    console.log("Respuesta:", res);
-
+    const res = await fetch("https://10dc2cc2f03b.ngrok.app/api/playtime");
     if (!res.ok) throw new Error("Error en la respuesta del servidor");
 
     const data = await res.json();
-    console.log("Datos obtenidos:", data);
 
     const rankingDiv = document.getElementById("ranking");
     rankingDiv.innerHTML = "";
