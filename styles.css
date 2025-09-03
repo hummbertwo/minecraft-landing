@@ -142,6 +142,23 @@ button {
   color: #4CAF50;
 }
 
+
+    .player-card {
+      display: inline-block;
+      background: #fff;
+      border-radius: 10px;
+      padding: 10px;
+      margin: 10px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+      width: 150px;
+    }
+    .player-card img {
+      border-radius: 50%;
+    }
+    .player-card p {
+      margin: 5px 0;
+    }
+
 .footer {
   background: #333;
   color: #f1f1f1;
