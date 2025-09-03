@@ -88,7 +88,7 @@ copyBtn.addEventListener("click", () => {
 // Fetch Playtime Ranking
 // =======================
 // Cambia esta URL por la que ngrok te dio (https://xxxx.ngrok.app)
-const BACKEND_PLAYTIME_URL = "https://10dc2cc2f03b.ngrok.app/api/playtime";
+const BACKEND_PLAYTIME_URL = "https://361dc5aeb5a4.ngrok.app/api/playtime";
 
 // =======================
 // Fetch Playtime Ranking
