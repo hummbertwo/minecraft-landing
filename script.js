@@ -87,15 +87,9 @@ copyBtn.addEventListener("click", () => {
 // =======================
 // Fetch Playtime Ranking
 // =======================
-// Cambia esta URL por la que ngrok te dio (https://xxxx.ngrok.app)
-const BACKEND_PLAYTIME_URL = "https://361dc5aeb5a4.ngrok-free.app/api/playtime";
-
-// =======================
-// Fetch Playtime Ranking
-// =======================
 async function fetchPlaytimeRanking() {
   try {
-    const res = await fetch(BACKEND_PLAYTIME_URL);
+    const res = await fetch("/api/playtime"); // API interna de Vercel
     if (!res.ok) throw new Error("Error en la respuesta del servidor");
 
     const data = await res.json();
@@ -122,6 +116,5 @@ async function fetchPlaytimeRanking() {
 
 fetchPlaytimeRanking();
 setInterval(fetchPlaytimeRanking, 60000); // refresca cada minuto
-
 
 
