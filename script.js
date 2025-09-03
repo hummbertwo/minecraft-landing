@@ -91,7 +91,7 @@ async function fetchPlaytimeRanking() {
   console.log("Intentando fetch al ranking...");
 
   try {
-    const res = await fetch("http://smpcremaserver.duckdns.org:3000/api/playtime");
+    const res = await fetch("https://10dc2cc2f03b.ngrok-free.app/api/playtime");
     console.log("Respuesta:", res);
 
     if (!res.ok) throw new Error("Error en la respuesta del servidor");
