@@ -151,6 +151,45 @@ async function fetchPlaytimeRanking() {
   }
 }
 
+
+
+/* =====================================================
+   🔹 5. Correo Email
+===================================================== */
+const form = document.getElementById("contactForm");
+const formMessage = document.getElementById("formMessage");
+
+form.addEventListener("submit", async (e) => {
+  e.preventDefault();
+
+  const formData = new FormData(form);
+  const email = formData.get("email");
+  const message = formData.get("message");
+
+  try {
+    const res = await fetch("/api/contact", { // tu endpoint de Nodemailer
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ email, message }),
+    });
+
+    const data = await res.json();
+
+    if (data.success) {
+      formMessage.textContent = "✅ Mensaje enviado correctamente";
+      form.reset();
+    } else {
+      formMessage.textContent = "❌ Error al enviar el mensaje";
+      console.error(data.error);
+    }
+  } catch (err) {
+    formMessage.textContent = "❌ Error al enviar el mensaje";
+    console.error(err);
+  }
+});
+
 // Inicializar y refrescar cada 60s
 fetchPlaytimeRanking();
 setInterval(fetchPlaytimeRanking, 60000);
