@@ -390,45 +390,6 @@ body {
   text-shadow: 0 0 8px rgba(255,215,0,0.6);
 }
 
-/* Contact form */
-.contact-form form {
-  display: flex;
-  flex-direction: column;
-  gap: 0.8rem;
-}
-
-.contact-form input,
-.contact-form textarea {
-  width: 100%;
-  padding: 0.7rem;
-  border: 1px solid rgba(255,215,0,0.15);
-  border-radius: 8px;
-  font-size: 0.95rem;
-  background: rgba(255,255,255,0.08);
-  color: #fff;
-}
-
-.contact-form input::placeholder,
-.contact-form textarea::placeholder {
-  color: #bbb;
-}
-
-.contact-form button {
-  background: #c1121f;
-  color: white;
-  border: none;
-  padding: 0.75rem;
-  border-radius: 8px;
-  font-size: 1rem;
-  font-weight: 700;
-  cursor: pointer;
-  transition: 0.3s;
-}
-.contact-form button:hover {
-  background: #e01e29;
-  transform: translateY(-2px);
-}
-
 /* Copy */
 .footer-copy {
   margin-top: 2rem;
