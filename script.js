@@ -84,6 +84,47 @@ copyBtn.addEventListener("click", () => {
   });
 });
 
+
+
+
+// =======================
+// Reglas Server Info
+// =======================
+
+
+// Toggle rules (mejor para móviles)
+const toggleRulesBtn = document.getElementById("toggleRules");
+const rulesList = document.getElementById("rulesList");
+
+if (toggleRulesBtn && rulesList) {
+  // iniciar oculto en móvil (mejor UX)
+  if (window.innerWidth <= 900) {
+    rulesList.style.display = "none";
+    toggleRulesBtn.textContent = "Mostrar reglas ▾";
+  }
+
+  toggleRulesBtn.addEventListener("click", () => {
+    const shown = rulesList.style.display !== "none";
+    rulesList.style.display = shown ? "none" : "block";
+    toggleRulesBtn.textContent = shown ? "Mostrar reglas ▾" : "Ocultar reglas ▴";
+  });
+
+  // ajustar al redimensionar
+  window.addEventListener("resize", () => {
+    if (window.innerWidth > 900) {
+      rulesList.style.display = "block";
+      toggleRulesBtn.textContent = "Mostrar reglas ▾";
+    } else {
+      rulesList.style.display = "none";
+      toggleRulesBtn.textContent = "Mostrar reglas ▾";
+    }
+  });
+}
+
+
+
+
+
 // =======================
 // Fetch Playtime Ranking
 // =======================
