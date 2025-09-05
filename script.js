@@ -115,6 +115,10 @@ if (toggleRulesBtn && rulesList) {
       toggleRulesBtn.textContent = "Mostrar reglas ▾";
     }
   });
+
+  document.getElementById("joinNowSmall").addEventListener("click", () => {
+  window.open("http://smpcremaserver.duckdns.org:8500", "_blank");
+  });
 }
 
 
