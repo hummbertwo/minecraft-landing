@@ -117,7 +117,7 @@ if (toggleRulesBtn && rulesList) {
   });
 
   document.getElementById("joinNowSmall").addEventListener("click", () => {
-  window.open("http://smpcremaserver.duckdns.org:8500", "_blank");
+  window.open("http://smp-hserver.duckdns.org:8500", "_blank");
   });
 }
 

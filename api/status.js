@@ -1,7 +1,7 @@
 import { status } from "minecraft-server-util";
 export default async function handler(req, res) {
   try {
-    const result = await status("smpcremaserver.duckdns.org", 25565, { timeout: 5000 });
+    const result = await status("smp-hserver.duckdns.org", 25565, { timeout: 5000 });
     res.status(200).json({
       online: true,
       players: {
