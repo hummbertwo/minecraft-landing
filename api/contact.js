@@ -9,13 +9,13 @@ export default async function handler(req, res) {
     service: "gmail",
     auth: {
       user: "hummber.km@gmail.com",
-      pass: "Betohum.19",
+      pass: "VCBDTeWH~E=K",
     },
   });
 
   try {
     await transporter.sendMail({
-      from: email,
+      from: "hummber.km@gmail.com",
       to: "hummber.km@gmail.com",
       subject: "Nuevo mensaje de contacto",
       text: `De: ${email}\n\n${message}`, // incluye el correo del usuario
