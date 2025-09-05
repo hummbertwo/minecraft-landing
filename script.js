@@ -1,8 +1,8 @@
 const BACKEND_URL = "/api/status";
 
-// =======================
-// Función para actualizar UI
-// =======================
+/* =====================================================
+   🔹 1. Estado del Servidor
+===================================================== */
 function updateServerStatus(data) {
   const statusDiv = document.getElementById("status");
   const playersDiv = document.getElementById("players");
@@ -40,9 +40,6 @@ function updateServerStatus(data) {
   }
 }
 
-// =======================
-// Fetch real al servidor
-// =======================
 async function fetchServerStatus() {
   try {
     const res = await fetch(BACKEND_URL);
@@ -58,12 +55,14 @@ async function fetchServerStatus() {
   }
 }
 
+// Inicializar y refrescar cada 30s
 fetchServerStatus();
 setInterval(fetchServerStatus, 30000);
 
-// =======================
-// Popup para copiar IP
-// =======================
+
+/* =====================================================
+   🔹 2. Popup para copiar IP
+===================================================== */
 const playBtn = document.getElementById("playBtn");
 const popup = document.getElementById("popup");
 const closePopup = document.getElementById("closePopup");
@@ -71,33 +70,30 @@ const copyBtn = document.getElementById("copyBtn");
 const copyMsg = document.getElementById("copyMsg");
 const serverIP = document.getElementById("serverIP");
 
-playBtn.addEventListener("click", () => popup.classList.remove("hidden"));
-closePopup.addEventListener("click", () => popup.classList.add("hidden"));
+if (playBtn && popup && closePopup && copyBtn && serverIP && copyMsg) {
+  playBtn.addEventListener("click", () => popup.classList.remove("hidden"));
+  closePopup.addEventListener("click", () => popup.classList.add("hidden"));
 
-copyBtn.addEventListener("click", () => {
-  navigator.clipboard.writeText(serverIP.value).then(() => {
-    copyMsg.textContent = "✅ IP copiada";
-    setTimeout(() => copyMsg.textContent = "", 2000);
-  }).catch(() => {
-    copyMsg.textContent = "⚠️ Error al copiar";
-    setTimeout(() => copyMsg.textContent = "", 2000);
+  copyBtn.addEventListener("click", () => {
+    navigator.clipboard.writeText(serverIP.value).then(() => {
+      copyMsg.textContent = "✅ IP copiada";
+      setTimeout(() => copyMsg.textContent = "", 2000);
+    }).catch(() => {
+      copyMsg.textContent = "⚠️ Error al copiar";
+      setTimeout(() => copyMsg.textContent = "", 2000);
+    });
   });
-});
+}
 
 
-
-
-// =======================
-// Reglas Server Info
-// =======================
-
-
-// Toggle rules (mejor para móviles)
+/* =====================================================
+   🔹 3. Reglas del Servidor
+===================================================== */
 const toggleRulesBtn = document.getElementById("toggleRules");
 const rulesList = document.getElementById("rulesList");
 
 if (toggleRulesBtn && rulesList) {
-  // iniciar oculto en móvil (mejor UX)
+  // Inicia oculto en móvil
   if (window.innerWidth <= 900) {
     rulesList.style.display = "none";
     toggleRulesBtn.textContent = "Mostrar reglas ▾";
@@ -109,7 +105,7 @@ if (toggleRulesBtn && rulesList) {
     toggleRulesBtn.textContent = shown ? "Mostrar reglas ▾" : "Ocultar reglas ▴";
   });
 
-  // ajustar al redimensionar
+  // Ajustar al redimensionar
   window.addEventListener("resize", () => {
     if (window.innerWidth > 900) {
       rulesList.style.display = "block";
@@ -122,19 +118,15 @@ if (toggleRulesBtn && rulesList) {
 }
 
 
-
-
-
-// =======================
-// Fetch Playtime Ranking
-// =======================
+/* =====================================================
+   🔹 4. Ranking por tiempo de juego
+===================================================== */
 async function fetchPlaytimeRanking() {
   try {
     const res = await fetch("/api/playtime"); // API interna de Vercel
     if (!res.ok) throw new Error("Error en la respuesta del servidor");
 
     const data = await res.json();
-
     const rankingDiv = document.getElementById("ranking");
     rankingDiv.innerHTML = "";
 
@@ -155,7 +147,8 @@ async function fetchPlaytimeRanking() {
   }
 }
 
+// Inicializar y refrescar cada 60s
 fetchPlaytimeRanking();
-setInterval(fetchPlaytimeRanking, 60000); // refresca cada minuto
+setInterval(fetchPlaytimeRanking, 60000);
 
 

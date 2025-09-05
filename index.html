@@ -8,25 +8,25 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <!-- Hero -->
-  <header class="hero">
-    <div class="container">
-      <h1 class="title">Bienvenido al Servidor SMP</h1>
-      <p class="subtitle">Conéctate y juega con tu comunidad</p>
-      <button id="playBtn" class="btn-primary">Jugar Ahora</button>
-    </div>
-  </header>
+<!-- Hero -->
+<header class="hero">
+  <div class="container hero-content">
+    <h1 class="title">⚔️ Bienvenido al Servidor SMP</h1>
+    <p class="subtitle">Un survival con <span>mods únicos</span> para tu aventura</p>
+    <button id="playBtn" class="btn-primary">🚀 Jugar Ahora</button>
+  </div>
+</header>
 
-  <!-- Estado del servidor -->
-  <section class="server-status">
-    <div class="container">
-      <h2>Estado del Servidor</h2>
-      <p id="status">⏳ Cargando...</p>
-      <div id="players" class="players-list">
-        <p>Cargando jugadores...</p>
-      </div>
+<!-- Estado del servidor -->
+<section class="server-status">
+  <div class="container">
+    <h2>🌍 Estado del Servidor</h2>
+    <p id="status">⏳ Cargando...</p>
+    <div id="players" class="players-list">
+      <p>Cargando jugadores...</p>
     </div>
-  </section>
+  </div>
+</section>
 
 <!-- INFO DEL SERVIDOR -->
 <section id="server-info" class="server-info section-card">
@@ -66,35 +66,62 @@
   </div>
 </section>
 
-<!-- ranking -->
-<h2>🏆 Top 10 Jugadores por Tiempo</h2>
-  <div id="ranking">Cargando...</div>
+<section class="mods-section">
+  <div class="mods-container">
+    <h2>⚙️ Mods del Servidor</h2>
+    <p class="mods-intro">
+      Nuestro servidor está potenciado con <span>mods seleccionados</span> para mejorar la experiencia de juego sin perder la esencia del survival.  
+      Aquí podrás descargar el paquete completo y asegurarte de usar la versión correcta.
+    </p>
 
-<footer class="footer">
-  <div class="footer-container">
-    <!-- Contacto -->
-    <div class="contact-form">
-      <h2>📩 Contáctanos</h2>
-      <form action="mailto:tu-correo@ejemplo.com" method="POST" enctype="text/plain">
-        <input type="text" name="nombre" placeholder="Tu nombre" required>
-        <input type="email" name="correo" placeholder="Tu correo" required>
-        <textarea name="mensaje" rows="4" placeholder="Escribe tu mensaje..." required></textarea>
-        <button type="submit">Enviar</button>
-      </form>
+    <ul class="mods-list">
+      <li>🌍 <strong>Biomes O’ Plenty</strong> — Nuevos biomas y paisajes únicos.</li>
+      <li>⚒️ <strong>Tinkers’ Construct</strong> — Herramientas y armas personalizables.</li>
+      <li>🐉 <strong>Ice and Fire</strong> — Dragones y criaturas míticas.</li>
+      <li>📦 <strong>JourneyMap</strong> — Minimapa y exploración en tiempo real.</li>
+      <li>🕒 <strong>Playtime Tracker</strong> — Controla tu tiempo jugado.</li>
+    </ul>
+
+    <div class="mods-buttons">
+      <a href="link-descarga-mods.zip" class="btn-download" download>⬇️ Descargar Paquete de Mods</a>
+      <a href="https://www.minecraft.net/es-es/download" target="_blank" class="btn-version">🔗 Descargar Versión 1.20.4</a>
     </div>
+  </div>
+</section>
 
     <!-- Redes sociales -->
+<footer class="footer">
+  <div class="footer-container">
+    
+    <div class="footer-brand">
+      <h2>⚡ MiServidor</h2>
+      <p>Un lugar para jugar limpio, construir y divertirse.  
+      Survival con mods y una comunidad activa 🚀</p>
+    </div>
+
     <div class="social-links">
       <h2>🌐 Síguenos</h2>
       <ul>
         <li><a href="https://discord.gg/tu-servidor" target="_blank">💬 Discord</a></li>
         <li><a href="https://twitch.tv/tu-canal" target="_blank">🎮 Twitch</a></li>
+        <li><a href="https://youtube.com/tu-canal" target="_blank">📺 YouTube</a></li>
       </ul>
     </div>
+
+    <div class="contact-form">
+      <h2>📩 Contáctanos</h2>
+      <form>
+        <input type="email" placeholder="Tu correo" required>
+        <textarea rows="3" placeholder="Escribe tu mensaje..."></textarea>
+        <button type="submit">Enviar</button>
+      </form>
+    </div>
+
   </div>
 
-  <p class="footer-copy">© 2025 Tu Servidor Minecraft — Todos los derechos reservados</p>
+  <p class="footer-copy">© 2025 MiServidor Minecraft — Todos los derechos reservados</p>
 </footer>
+
 
 
   <!-- Popup -->
