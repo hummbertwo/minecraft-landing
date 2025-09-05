@@ -1,4 +1,16 @@
 /* -------- Hero Section -------- */
+body { 
+  margin: 0; 
+  font-family: 'Poppins', sans-serif; 
+  background: #0d0d0d; 
+  color: #fff; 
+} 
+  h1, h2, h3 { 
+    font-weight: 600; 
+  } 
+  p { 
+    font-weight: 400; 
+  }
 .hero {
   background-image: url("/assets/img1.webp");
   background-size: cover;
