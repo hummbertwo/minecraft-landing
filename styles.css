@@ -91,35 +91,43 @@ body {
 
 .players-list {
   display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 1rem;
+  flex-direction: column;   /* 👈 Ahora apila las tarjetas */
+  align-items: stretch;     /* 👈 Hace que cada tarjeta ocupe todo el ancho */
+  gap: 0.8rem;
+  width: 100%;
+  max-width: 600px;         /* Opcional: limita el ancho máximo */
+  margin: auto;
 }
 
 .player-card {
-   background: rgba(255,255,255,0.05);
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+
+  background: rgba(255, 255, 255, 0.05);
   padding: 0.8rem 1rem;
   border-left: 3px solid #FFD700;
-  margin-bottom: 0.8rem;
   border-radius: 6px;
   font-size: 1rem;
   color: #f5f5f5;
   transition: 0.3s;
+  width: 100%;              /* 👈 Ocupa todo el ancho */
 }
+
 .player-card:hover {
-  transform: scale(1.05);
+  transform: scale(1.02);
 }
 
 .player-card img {
-  width: 24px;
-  height: 24px;
-  border-radius: 4px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;       /* 👈 Hace la imagen circular */
 }
 
 .player-name {
-  margin-top: 0.5rem;
-  font-size: 0.9rem;
-  font-weight: 400;
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 500;
   color: #fff;
 }
 
