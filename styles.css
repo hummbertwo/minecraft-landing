@@ -111,15 +111,15 @@ body {
 }
 
 .player-card img {
-  width: 72px;
-  height: 72px;
-  border-radius: 10px;
+  width: 32px;
+  height: 32px;
+  border-radius: 4px;
 }
 
 .player-name {
   margin-top: 0.5rem;
   font-size: 0.9rem;
-  font-weight: 600;
+  font-weight: 400;
   color: #fff;
 }
 
