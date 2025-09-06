@@ -97,13 +97,14 @@ body {
 }
 
 .player-card {
-  background: linear-gradient(135deg, #8B0000, #444);
-  border-radius: 12px;
-  padding: 1rem;
-  text-align: center;
-  width: 120px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.5);
-  transition: transform 0.2s;
+   background: rgba(255,255,255,0.05);
+  padding: 0.8rem 1rem;
+  border-left: 3px solid #FFD700;
+  margin-bottom: 0.8rem;
+  border-radius: 6px;
+  font-size: 1rem;
+  color: #f5f5f5;
+  transition: 0.3s;
 }
 .player-card:hover {
   transform: scale(1.05);
