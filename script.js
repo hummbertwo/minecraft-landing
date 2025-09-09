@@ -63,27 +63,23 @@ setInterval(fetchServerStatus, 30000);
 /* =====================================================
    🔹 2. Popup para copiar IP
 ===================================================== */
-const playBtn = document.getElementById("playBtn");
-const popup = document.getElementById("popup");
-const closePopup = document.getElementById("closePopup");
-const copyBtn = document.getElementById("copyBtn");
-const copyMsg = document.getElementById("copyMsg");
-const serverIP = document.getElementById("serverIP");
+// Abrir popup
+document.getElementById("joinNowSmall").addEventListener("click", () => {
+  document.getElementById("serverModal").style.display = "block";
+});
 
-if (playBtn && popup && closePopup && copyBtn && serverIP && copyMsg) {
-  playBtn.addEventListener("click", () => popup.classList.remove("hidden"));
-  closePopup.addEventListener("click", () => popup.classList.add("hidden"));
+// Cerrar popup con la X
+document.querySelector(".close-btn").addEventListener("click", () => {
+  document.getElementById("serverModal").style.display = "none";
+});
 
-  copyBtn.addEventListener("click", () => {
-    navigator.clipboard.writeText(serverIP.value).then(() => {
-      copyMsg.textContent = "✅ IP copiada";
-      setTimeout(() => copyMsg.textContent = "", 2000);
-    }).catch(() => {
-      copyMsg.textContent = "⚠️ Error al copiar";
-      setTimeout(() => copyMsg.textContent = "", 2000);
-    });
-  });
-}
+// Cerrar si se hace click fuera del modal
+window.addEventListener("click", (e) => {
+  const modal = document.getElementById("serverModal");
+  if (e.target === modal) {
+    modal.style.display = "none";
+  }
+});
 
 
 /* =====================================================

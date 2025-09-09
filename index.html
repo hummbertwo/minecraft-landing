@@ -112,16 +112,31 @@
 </footer>
 
 
+<!-- Popup Modal -->
+<div id="serverModal" class="modal">
+  <div class="modal-content">
+    <span class="close-btn">&times;</span>
+    <h2 class="modal-title">Únete al Servidor SMP</h2>
+    <p class="modal-subtitle">
+      Nuestro servidor es gratuito y está disponible en <b>Minecraft: Java Edition</b>.
+    </p>
 
-<div id="popup" class="popup hidden">
-  <div class="popup-content">
-    <h2>Conéctate al servidor</h2>
-    <input type="text" id="serverIP" value="smp-hserver.duckdns.org" readonly />
-    <button id="copyBtn">Copiar IP</button>
-    <p id="copyMsg"></p>
-    <button id="closePopup">Cerrar</button>
+    <h3 class="modal-section-title">Cómo conectarse</h3>
+
+    <div class="modal-image">
+      <img src="/assets/server-example.png" alt="Ejemplo conexión servidor">
+    </div>
+
+    <ol class="modal-steps">
+      <li>Haz clic en <b>Multijugador</b>, luego <b>Añadir Servidor</b>.</li>
+      <li>Copia y pega la IP: <code>play.tuservidor.net</code> en la dirección.</li>
+      <li>Activa <b>Paquetes de recursos</b> en <b>Habilitado</b> y haz clic en <b>Hecho</b>.</li>
+    </ol>
+
+    <button class="btn-primary">¡Entendido!</button>
   </div>
 </div>
+
 
   <script src="script.js"></script>
 </body>
