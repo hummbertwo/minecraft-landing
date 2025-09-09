@@ -63,23 +63,37 @@ setInterval(fetchServerStatus, 30000);
 /* =====================================================
    🔹 2. Popup para copiar IP
 ===================================================== */
-// Abrir popup
-document.getElementById("joinNowSmall").addEventListener("click", () => {
-  document.getElementById("serverModal").style.display = "block";
-});
-
-// Cerrar popup con la X
-document.querySelector(".close-btn").addEventListener("click", () => {
-  document.getElementById("serverModal").style.display = "none";
-});
-
-// Cerrar si se hace click fuera del modal
-window.addEventListener("click", (e) => {
+document.addEventListener("DOMContentLoaded", () => {
+  const playBtn = document.getElementById("playBtn");
   const modal = document.getElementById("serverModal");
-  if (e.target === modal) {
+  const closeBtn = document.querySelector(".close-btn");
+  const closeModalBtn = document.getElementById("closeModalBtn");
+
+  if (!playBtn || !modal) return;
+
+  // Abrir modal con botón "Jugar Ahora"
+  playBtn.addEventListener("click", () => {
+    modal.style.display = "block";
+  });
+
+  // Cerrar con la X
+  closeBtn.addEventListener("click", () => {
     modal.style.display = "none";
-  }
+  });
+
+  // Cerrar con botón "¡Entendido!"
+  closeModalBtn.addEventListener("click", () => {
+    modal.style.display = "none";
+  });
+
+  // Cerrar si se hace click fuera del modal
+  window.addEventListener("click", (e) => {
+    if (e.target === modal) {
+      modal.style.display = "none";
+    }
+  });
 });
+
 
 
 

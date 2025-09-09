@@ -433,7 +433,7 @@ body {
 
 /* === Popup Base === */
 .modal {
-  display: none; /* oculto por defecto */
+  display: none;
   position: fixed;
   z-index: 1000;
   left: 0;
@@ -444,7 +444,6 @@ body {
   backdrop-filter: blur(4px);
 }
 
-/* Contenido */
 .modal-content {
   background: #1a1a1a;
   color: #f5f5f5;
@@ -457,7 +456,6 @@ body {
   position: relative;
 }
 
-/* Botón cerrar */
 .close-btn {
   position: absolute;
   top: 15px;
@@ -470,7 +468,6 @@ body {
   color: #fff;
 }
 
-/* Títulos */
 .modal-title {
   font-size: 1.8rem;
   margin-bottom: 0.5rem;
@@ -486,14 +483,12 @@ body {
   color: #FFD700;
 }
 
-/* Imagen */
 .modal-image img {
   max-width: 100%;
   border-radius: 8px;
   margin: 1rem 0;
 }
 
-/* Pasos */
 .modal-steps {
   text-align: left;
   margin: 1rem auto;
@@ -505,21 +500,6 @@ body {
   color: #ddd;
 }
 
-/* Botón */
-.btn-primary {
-  margin-top: 1rem;
-  padding: 0.8rem 2rem;
-  background: #00ff88;
-  color: #111;
-  border: none;
-  border-radius: 8px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: 0.3s;
-}
-.btn-primary:hover {
-  background: #00cc6a;
-}
 
 
 /* Animación de entrada */
