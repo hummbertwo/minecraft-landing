@@ -82,6 +82,7 @@ window.addEventListener("click", (e) => {
 });
 
 
+
 /* =====================================================
    🔹 3. Reglas del Servidor
 ===================================================== */
@@ -117,35 +118,6 @@ if (toggleRulesBtn && rulesList) {
   });
 }
 
-
-/* =====================================================
-   🔹 4. Ranking por tiempo de juego
-===================================================== */
-async function fetchPlaytimeRanking() {
-  try {
-    const res = await fetch("/api/playtime"); // API interna de Vercel
-    if (!res.ok) throw new Error("Error en la respuesta del servidor");
-
-    const data = await res.json();
-    const rankingDiv = document.getElementById("ranking");
-    rankingDiv.innerHTML = "";
-
-    data.forEach((player, i) => {
-      const card = document.createElement("div");
-      card.className = "player-card";
-      card.innerHTML = `
-        <h3>#${i + 1}</h3>
-        <img src="https://minotar.net/avatar/${player.uuid}/72" alt="${player.name}" />
-        <p>${player.name}</p>
-        <p>⏱ ${player.playtime}</p>
-      `;
-      rankingDiv.appendChild(card);
-    });
-  } catch (err) {
-    console.error("Error al cargar ranking:", err);
-    document.getElementById("ranking").innerHTML = "<p>⚠️ No se pudo cargar el ranking</p>";
-  }
-}
 
 
 
