@@ -3,42 +3,34 @@ const BACKEND_URL = "/api/bluemap";
 /* =====================================================
    🔹 1. Estado del Servidor
 ===================================================== */
-function updateServerStatus(data) {
-  const statusDiv = document.getElementById("status");
-  const playersDiv = document.getElementById("players");
-  playersDiv.innerHTML = "";
+async function fetchServerStatus() {
+  try {
+    // BlueMap responde en /api/player/online para la lista de jugadores
+    const resPlayers = await fetch("http://smp-hserver.duckdns.org:8100/api/player/online");
+    const players = await resPlayers.json();
 
-  if (!data.online) {
-    statusDiv.textContent = "❌ Servidor Offline";
-    statusDiv.style.color = "red";
-    playersDiv.innerHTML = "<p>No hay jugadores conectados</p>";
-    return;
-  }
+    // Si esto responde, el server está online
+    const resMaps = await fetch("http://smp-hserver.duckdns.org:8100/api/maps");
 
-  statusDiv.textContent = `✅ Online - ${data.players.online}/${data.players.max}`;
-  statusDiv.style.color = "lightgreen";
+    const data = {
+      online: resMaps.ok,
+      players: {
+        online: players.length,
+        max: 20, // aquí puedes poner el máximo que tenga tu server
+        list: players.map(p => p.name)
+      }
+    };
 
-  if (data.players.list && data.players.list.length > 0) {
-    data.players.list.forEach(player => {
-      const card = document.createElement("div");
-      card.className = "player-card";
+    updateServerStatus(data);
 
-      const avatar = document.createElement("img");
-      avatar.src = `https://minotar.net/avatar/${player}/72`;
-      avatar.alt = player;
-
-      const name = document.createElement("div");
-      name.className = "player-name";
-      name.textContent = player;
-
-      card.appendChild(avatar);
-      card.appendChild(name);
-      playersDiv.appendChild(card);
-    });
-  } else {
-    playersDiv.innerHTML = "<p>No hay jugadores conectados</p>";
+  } catch (err) {
+    updateServerStatus({ online: false, players: { online: 0, max: 0, list: [] } });
   }
 }
+
+// correr al cargar y cada 30s
+fetchServerStatus();
+setInterval(fetchServerStatus, 30000);
 
 async function fetchServerStatus() {
   try {
