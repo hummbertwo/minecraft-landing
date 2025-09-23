@@ -2,23 +2,53 @@
 /* =====================================================
    🔹 1. Estado del Servidor
 ===================================================== */
-const BACKEND_URL = "/api/bluemap";
+const BACKEND_URL = "/api/status";
 
-/* =====================================================
-   🔹 1. Estado del Servidor
-===================================================== */
 async function fetchServerStatus() {
   try {
     const res = await fetch(BACKEND_URL);
     const data = await res.json();
     updateServerStatus(data);
   } catch (err) {
-    console.error(err);
-    const statusDiv = document.getElementById("status");
-    const playersDiv = document.getElementById("players");
-    statusDiv.textContent = "⚠️ Error al consultar el servidor";
-    statusDiv.style.color = "orange";
-    playersDiv.innerHTML = "<p>No se pudo cargar la lista de jugadores</p>";
+    console.error("Error al obtener status:", err);
+    updateServerStatus({ online: false, players: { online: 0, max: 0, list: [] } });
+  }
+}
+
+function updateServerStatus(data) {
+  const statusDiv = document.getElementById("status");
+  const playersDiv = document.getElementById("players");
+  playersDiv.innerHTML = "";
+
+  if (!data.online) {
+    statusDiv.textContent = "❌ Servidor Offline";
+    statusDiv.style.color = "red";
+    playersDiv.innerHTML = "<p>No hay jugadores conectados</p>";
+    return;
+  }
+
+  statusDiv.textContent = `✅ Online - ${data.players.online}/${data.players.max}`;
+  statusDiv.style.color = "lightgreen";
+
+  if (data.players.list && data.players.list.length > 0) {
+    data.players.list.forEach(player => {
+      const card = document.createElement("div");
+      card.className = "player-card";
+
+      const avatar = document.createElement("img");
+      avatar.src = `https://minotar.net/avatar/${player}/72`;
+      avatar.alt = player;
+
+      const name = document.createElement("div");
+      name.className = "player-name";
+      name.textContent = player;
+
+      card.appendChild(avatar);
+      card.appendChild(name);
+      playersDiv.appendChild(card);
+    });
+  } else {
+    playersDiv.innerHTML = "<p>No hay jugadores conectados</p>";
   }
 }
 
