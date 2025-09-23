@@ -120,7 +120,7 @@ if (toggleRulesBtn && rulesList) {
   });
 
   document.getElementById("joinNowSmall").addEventListener("click", () => {
-  window.open("http://smp-hserver.duckdns.org:8500", "_blank");
+  window.open("http://smp-hserver.duckdns.org:8100", "_blank");
   });
 }
 
