@@ -1,37 +1,12 @@
+
+/* =====================================================
+   🔹 1. Estado del Servidor
+===================================================== */
 const BACKEND_URL = "/api/bluemap";
 
 /* =====================================================
    🔹 1. Estado del Servidor
 ===================================================== */
-async function fetchServerStatus() {
-  try {
-    // BlueMap responde en /api/player/online para la lista de jugadores
-    const resPlayers = await fetch("http://smp-hserver.duckdns.org:8100/api/player/online");
-    const players = await resPlayers.json();
-
-    // Si esto responde, el server está online
-    const resMaps = await fetch("http://smp-hserver.duckdns.org:8100/api/maps");
-
-    const data = {
-      online: resMaps.ok,
-      players: {
-        online: players.length,
-        max: 20, // aquí puedes poner el máximo que tenga tu server
-        list: players.map(p => p.name)
-      }
-    };
-
-    updateServerStatus(data);
-
-  } catch (err) {
-    updateServerStatus({ online: false, players: { online: 0, max: 0, list: [] } });
-  }
-}
-
-// correr al cargar y cada 30s
-fetchServerStatus();
-setInterval(fetchServerStatus, 30000);
-
 async function fetchServerStatus() {
   try {
     const res = await fetch(BACKEND_URL);
